@@ -10,7 +10,7 @@ export default async function KasirLayout({ children }: { children: React.ReactN
   return (
     <div className="min-h-screen">
       <KasirNavbar name={session.user.name ?? session.user.username} role={session.user.role} />
-      <main className="p-4 lg:p-6">{children}</main>
+      <main className="cashier-main mx-auto max-w-[1600px] px-4 pb-28 pt-6 sm:px-6 sm:pb-28 lg:px-8 lg:py-8">{children}</main>
     </div>
   );
 }

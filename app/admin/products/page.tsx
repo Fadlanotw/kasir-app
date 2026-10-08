@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { formatRupiah } from "@/lib/utils";
 import ProductFormModal from "@/components/ProductFormModal";
+import ProductImage from "@/components/ProductImage";
 import { Plus, Pencil, Trash2, Search } from "lucide-react";
 
 type Product = {
@@ -54,18 +55,19 @@ export default function ProductsPage() {
   );
 
   return (
-    <div className="space-y-5">
+    <div className="space-y-6">
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
         <div>
-          <h1 className="text-2xl font-bold text-gray-800">Produk & Stok</h1>
-          <p className="text-gray-500 text-sm">Kelola daftar produk minimarket kamu.</p>
+          <p className="mb-2 text-xs font-bold uppercase tracking-[0.16em] text-brand-red">Inventaris</p>
+          <h1 className="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">Produk & Stok</h1>
+          <p className="mt-1 text-sm text-gray-500">Kelola katalog, harga, dan ketersediaan barang.</p>
         </div>
         <button
           onClick={() => {
             setEditing(null);
             setModalOpen(true);
           }}
-          className="flex items-center gap-2 bg-brand-red text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-brand-redDark"
+          className="primary-action flex items-center gap-2 px-4 py-3 text-sm"
         >
           <Plus size={16} /> Tambah Produk
         </button>
@@ -78,13 +80,13 @@ export default function ProductsPage() {
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             placeholder="Cari produk atau SKU..."
-            className="w-full pl-9 pr-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-brand-blue"
+            className="w-full pl-9 pr-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-brand-red"
           />
         </div>
         <select
           value={selectedCategory ?? ""}
           onChange={(e) => setSelectedCategory(e.target.value ? Number(e.target.value) : null)}
-          className="border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brand-blue"
+          className="border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brand-red"
         >
           <option value="">Semua Kategori</option>
           {categories.map((c) => (
@@ -95,7 +97,7 @@ export default function ProductsPage() {
         </select>
       </div>
 
-      <div className="bg-white rounded-xl shadow-sm overflow-hidden">
+      <div className="data-table-shell overflow-x-auto">
         <table className="w-full text-sm">
           <thead className="bg-gray-50 text-gray-500 text-left">
             <tr>
@@ -113,12 +115,7 @@ export default function ProductsPage() {
               <tr key={p.id} className="hover:bg-gray-50">
                 <td className="px-4 py-3">
                   <div className="w-12 h-12 rounded-lg bg-gray-100 overflow-hidden flex items-center justify-center">
-                    {p.imageUrl ? (
-                      // eslint-disable-next-line @next/next/no-img-element
-                      <img src={p.imageUrl} alt={p.name} className="w-full h-full object-cover" />
-                    ) : (
-                      <span>🛒</span>
-                    )}
+                    <ProductImage name={p.name} imageUrl={p.imageUrl} className="text-xl" />
                   </div>
                 </td>
                 <td className="px-4 py-3 font-medium text-gray-800">{p.name}</td>

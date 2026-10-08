@@ -20,7 +20,7 @@ export default function SalesChart({ data }: { data: { date: string; total: numb
           stroke="#9ca3af"
         />
         <Tooltip formatter={(value: number) => formatRupiah(value)} labelFormatter={(l) => `Tanggal ${l}`} />
-        <Line type="monotone" dataKey="total" stroke="#D6001C" strokeWidth={2.5} dot={{ r: 3 }} />
+        <Line type="monotone" dataKey="total" stroke="#0f8b6d" strokeWidth={2.5} dot={{ r: 4, fill: "#0f8b6d", strokeWidth: 2 }} />
       </LineChart>
     </ResponsiveContainer>
   );

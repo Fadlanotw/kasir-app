@@ -56,9 +56,9 @@ export default function UserFormModal({
   }
 
   return (
-    <div className="fixed inset-0 bg-black/40 flex items-center justify-center z-50 p-4">
-      <div className="bg-white rounded-xl w-full max-w-sm shadow-xl">
-        <div className="flex items-center justify-between px-5 py-4 border-b">
+    <div className="modal-backdrop fixed inset-0 z-50 flex items-start justify-center overflow-y-auto p-4 sm:items-center">
+      <div className="modal-panel w-full max-w-sm">
+        <div className="flex items-center justify-between border-b border-gray-100 px-5 py-4">
           <h3 className="font-semibold text-gray-800">{initial?.id ? "Edit Akun" : "Tambah Akun"}</h3>
           <button onClick={onClose} className="text-gray-400 hover:text-gray-600">
             <X size={20} />
@@ -72,7 +72,7 @@ export default function UserFormModal({
               required
               value={form.name}
               onChange={(e) => setForm({ ...form, name: e.target.value })}
-              className="w-full mt-1 border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brand-blue"
+              className="w-full mt-1 border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brand-red"
             />
           </div>
 
@@ -82,7 +82,7 @@ export default function UserFormModal({
               required
               value={form.username}
               onChange={(e) => setForm({ ...form, username: e.target.value })}
-              className="w-full mt-1 border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brand-blue"
+              className="w-full mt-1 border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brand-red"
             />
           </div>
 
@@ -96,7 +96,7 @@ export default function UserFormModal({
               value={form.password}
               onChange={(e) => setForm({ ...form, password: e.target.value })}
               placeholder={initial?.id ? "••••••••" : ""}
-              className="w-full mt-1 border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brand-blue"
+              className="w-full mt-1 border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brand-red"
             />
           </div>
 
@@ -115,14 +115,14 @@ export default function UserFormModal({
             <button
               type="button"
               onClick={onClose}
-              className="flex-1 border border-gray-300 rounded-lg py-2 text-sm font-medium text-gray-600 hover:bg-gray-50"
+              className="flex-1 rounded-xl border border-gray-200 py-2.5 text-sm font-medium text-gray-600 transition hover:bg-gray-50"
             >
               Batal
             </button>
             <button
               type="submit"
               disabled={saving}
-              className="flex-1 bg-brand-blue text-white rounded-lg py-2 text-sm font-medium hover:opacity-90 disabled:opacity-60"
+              className="primary-action flex-1 py-2.5 text-sm"
             >
               {saving ? "Menyimpan..." : "Simpan"}
             </button>

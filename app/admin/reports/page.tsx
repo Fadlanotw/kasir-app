@@ -69,21 +69,22 @@ export default function ReportsPage() {
   }
 
   return (
-    <div className="space-y-5">
+    <div className="space-y-6">
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
         <div>
-          <h1 className="text-2xl font-bold text-gray-800">Laporan Penjualan</h1>
-          <p className="text-gray-500 text-sm">Riwayat transaksi dan ringkasan penjualan.</p>
+          <p className="mb-2 text-xs font-bold uppercase tracking-[0.16em] text-brand-red">Analitik</p>
+          <h1 className="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">Laporan Penjualan</h1>
+          <p className="mt-1 text-sm text-gray-500">Tinjau transaksi dan ringkasan penjualan toko.</p>
         </div>
         <button
           onClick={exportCsv}
-          className="flex items-center gap-2 bg-brand-blue text-white px-4 py-2 rounded-lg text-sm font-medium hover:opacity-90"
+          className="primary-action flex items-center gap-2 px-4 py-2.5 text-sm"
         >
           <FileDown size={16} /> Export CSV
         </button>
       </div>
 
-      <div className="bg-white rounded-xl shadow-sm p-4 flex flex-wrap items-end gap-3">
+      <div className="surface-card flex flex-wrap items-end gap-3 p-4 sm:p-5">
         <div>
           <label className="text-xs text-gray-500">Dari Tanggal</label>
           <input
@@ -104,24 +105,24 @@ export default function ReportsPage() {
         </div>
         <button
           onClick={load}
-          className="bg-gray-800 text-white px-4 py-1.5 rounded-lg text-sm font-medium hover:opacity-90"
+          className="primary-action px-4 py-2 text-sm"
         >
           Filter
         </button>
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        <div className="bg-white rounded-xl shadow-sm p-5">
+        <div className="surface-card p-5">
           <p className="text-xs text-gray-500">Total Pendapatan</p>
           <p className="text-xl font-bold text-gray-800">{formatRupiah(totalRevenue)}</p>
         </div>
-        <div className="bg-white rounded-xl shadow-sm p-5">
+        <div className="surface-card p-5">
           <p className="text-xs text-gray-500">Total Item Terjual</p>
           <p className="text-xl font-bold text-gray-800">{totalItemsSold}</p>
         </div>
       </div>
 
-      <div className="bg-white rounded-xl shadow-sm overflow-hidden">
+      <div className="data-table-shell overflow-x-auto">
         <table className="w-full text-sm">
           <thead className="bg-gray-50 text-gray-500 text-left">
             <tr>

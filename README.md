@@ -1,4 +1,4 @@
-# KasirMart — Aplikasi Kasir Minimarket (Next.js)
+# ArfaMart — Aplikasi Kasir Minimarket (Next.js)
 
 Aplikasi kasir sederhana bertema minimarket (seperti Indomaret) dengan 2 role:
 - **Admin**: kelola produk & stok, lihat laporan penjualan + grafik dashboard.

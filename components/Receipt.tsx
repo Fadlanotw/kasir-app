@@ -23,7 +23,7 @@ export default function Receipt({ data }: { data: ReceiptData }) {
   return (
     <div id="receipt-print" className="font-mono text-xs w-72 mx-auto text-gray-800">
       <div className="text-center mb-2">
-        <p className="font-bold text-sm">KASIRMART</p>
+        <p className="font-bold text-sm">ARFAMART</p>
         <p>Jl. Contoh Raya No. 1, Kota</p>
         <p>=========================</p>
       </div>

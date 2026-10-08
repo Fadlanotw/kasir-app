@@ -21,6 +21,7 @@ export function paymentLabel(method?: string | null, type?: string | null): stri
     shopeepay: "ShopeePay",
     dana: "DANA",
     bank_transfer: "Transfer Bank",
+    debit_credit: "Kartu Debit/Kredit",
     echannel: "Mandiri Bill",
     credit_card: "Kartu Kredit",
     cstore: "Minimarket",

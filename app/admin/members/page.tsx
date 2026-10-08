@@ -72,27 +72,28 @@ export default function MembersPage() {
   );
 
   return (
-    <div className="space-y-5">
+    <div className="space-y-6">
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
         <div>
-          <h1 className="text-2xl font-bold text-gray-800 flex items-center gap-2">
-            <Users size={22} className="text-brand-red" /> Member Pelanggan
+          <p className="mb-2 text-xs font-bold uppercase tracking-[0.16em] text-brand-red">Pelanggan</p>
+          <h1 className="flex items-center gap-2 text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">
+            <Users size={25} className="text-brand-red" /> Member Pelanggan
           </h1>
-          <p className="text-gray-500 text-sm">Kelola data member dan diskon yang berlaku untuk semua member.</p>
+          <p className="mt-1 text-sm text-gray-500">Kelola pelanggan setia dan diskon member.</p>
         </div>
         <button
           onClick={() => {
             setEditing(null);
             setModalOpen(true);
           }}
-          className="flex items-center gap-2 bg-brand-red text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-brand-redDark"
+          className="primary-action flex items-center gap-2 px-4 py-3 text-sm"
         >
           <Plus size={16} /> Tambah Member
         </button>
       </div>
 
       {/* Pengaturan diskon global */}
-      <div className="bg-white rounded-xl shadow-sm p-5">
+      <div className="surface-card p-5 sm:p-6">
         <div className="flex items-center gap-2 mb-1">
           <Percent size={18} className="text-brand-red" />
           <h2 className="font-semibold text-gray-800">Diskon untuk Semua Member</h2>
@@ -109,14 +110,14 @@ export default function MembersPage() {
               max={100}
               value={discountInput}
               onChange={(e) => setDiscountInput(e.target.value)}
-              className="w-full border border-gray-300 rounded-lg pl-3 pr-7 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brand-blue"
+              className="w-full border border-gray-300 rounded-lg pl-3 pr-7 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brand-red"
             />
             <span className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm">%</span>
           </div>
           <button
             onClick={handleSaveDiscount}
             disabled={savingDiscount}
-            className="bg-brand-blue text-white px-4 py-2 rounded-lg text-sm font-medium hover:opacity-90 disabled:opacity-60"
+            className="primary-action px-4 py-2.5 text-sm disabled:opacity-60"
           >
             {savingDiscount ? "Menyimpan..." : "Simpan Diskon"}
           </button>
@@ -133,11 +134,11 @@ export default function MembersPage() {
           value={search}
           onChange={(e) => setSearch(e.target.value)}
           placeholder="Cari nama atau nomor HP..."
-          className="w-full pl-9 pr-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-brand-blue"
+          className="w-full pl-9 pr-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-brand-red"
         />
       </div>
 
-      <div className="bg-white rounded-xl shadow-sm overflow-hidden">
+      <div className="data-table-shell overflow-x-auto">
         <table className="w-full text-sm">
           <thead className="bg-gray-50 text-gray-500 text-left">
             <tr>

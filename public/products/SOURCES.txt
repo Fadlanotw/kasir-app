@@ -1,0 +1,15 @@
+Product photos
+
+Package photos are from Open Food Facts. The product photos are shared under
+the Creative Commons Attribution-ShareAlike license. Source product pages:
+- AQUA (8886008101091): https://world.openfoodfacts.org/product/8886008101091
+- Kapal Api Special Mix (8991002135376): https://world.openfoodfacts.org/product/8991002135376
+- Chitato (0089686734058): https://world.openfoodfacts.org/product/0089686734058
+- Indomie Mi Goreng (8994963002800): https://world.openfoodfacts.org/product/8994963002800
+- Oreo Original (7622300336738): https://world.openfoodfacts.org/product/7622300336738
+- Bimoli (8992628020152): https://world.openfoodfacts.org/product/8992628020152
+- Gula Kristal Putih (8997207580027): https://world.openfoodfacts.org/product/8997207580027
+
+Tea and rice photos are from Unsplash:
+- Tea: https://images.unsplash.com/photo-1559056199-641a0ac8b55e
+- Rice: https://images.unsplash.com/photo-1586201375761-83865001e31c

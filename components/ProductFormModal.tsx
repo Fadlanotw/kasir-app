@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { X } from "lucide-react";
+import ProductImage from "@/components/ProductImage";
 
 type Category = { id: number; name: string };
 type Product = {
@@ -80,9 +81,9 @@ export default function ProductFormModal({
   }
 
   return (
-    <div className="fixed inset-0 bg-black/40 flex items-center justify-center z-50 p-4">
-      <div className="bg-white rounded-xl w-full max-w-md shadow-xl">
-        <div className="flex items-center justify-between px-5 py-4 border-b">
+    <div className="modal-backdrop fixed inset-0 z-50 flex items-start justify-center overflow-y-auto p-4 sm:items-center">
+      <div className="modal-panel w-full max-w-md">
+        <div className="flex items-center justify-between border-b border-gray-100 px-5 py-4">
           <h3 className="font-semibold text-gray-800">{initial?.id ? "Edit Produk" : "Tambah Produk"}</h3>
           <button onClick={onClose} className="text-gray-400 hover:text-gray-600">
             <X size={20} />
@@ -93,12 +94,11 @@ export default function ProductFormModal({
           <div>
             <label className="text-sm text-gray-600">Gambar Produk</label>
             <div className="mt-1 flex items-center gap-3">
-              <div className="w-20 h-20 rounded-lg border border-dashed border-gray-300 bg-gray-50 flex items-center justify-center overflow-hidden shrink-0">
+              <div className="flex h-20 w-20 shrink-0 items-center justify-center overflow-hidden rounded-xl border border-dashed border-gray-300 bg-gray-50">
                 {form.imageUrl ? (
-                  // eslint-disable-next-line @next/next/no-img-element
-                  <img src={form.imageUrl} alt="Preview" className="w-full h-full object-cover" />
+                  <ProductImage name={form.name || "Gambar produk"} imageUrl={form.imageUrl} />
                 ) : (
-                  <span className="text-xs text-gray-400">Belum ada</span>
+                  <ProductImage name={form.name} className="text-2xl" />
                 )}
               </div>
               <div className="text-xs text-gray-500">
@@ -119,7 +119,7 @@ export default function ProductFormModal({
               required
               value={form.name}
               onChange={(e) => setForm({ ...form, name: e.target.value })}
-              className="w-full mt-1 border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brand-blue"
+              className="w-full mt-1 border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brand-red"
             />
           </div>
 
@@ -130,7 +130,7 @@ export default function ProductFormModal({
                 required
                 value={form.sku}
                 onChange={(e) => setForm({ ...form, sku: e.target.value })}
-                className="w-full mt-1 border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brand-blue"
+                className="w-full mt-1 border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brand-red"
               />
             </div>
             <div>
@@ -138,7 +138,7 @@ export default function ProductFormModal({
               <select
                 value={form.categoryId ?? ""}
                 onChange={(e) => setForm({ ...form, categoryId: e.target.value ? Number(e.target.value) : null })}
-                className="w-full mt-1 border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brand-blue"
+                className="w-full mt-1 border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brand-red"
               >
                 <option value="">- Pilih -</option>
                 {categories.map((c) => (
@@ -150,7 +150,7 @@ export default function ProductFormModal({
             </div>
           </div>
 
-          <div className="grid grid-cols-3 gap-3">
+          <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
             <div>
               <label className="text-sm text-gray-600">Harga</label>
               <input
@@ -159,7 +159,7 @@ export default function ProductFormModal({
                 min={0}
                 value={form.price}
                 onChange={(e) => setForm({ ...form, price: Number(e.target.value) })}
-                className="w-full mt-1 border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brand-blue"
+                className="w-full mt-1 border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brand-red"
               />
             </div>
             <div>
@@ -170,10 +170,10 @@ export default function ProductFormModal({
                 min={0}
                 value={form.stock}
                 onChange={(e) => setForm({ ...form, stock: Number(e.target.value) })}
-                className="w-full mt-1 border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brand-blue"
+                className="w-full mt-1 border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brand-red"
               />
             </div>
-            <div>
+            <div className="col-span-2 sm:col-span-1">
               <label className="text-sm text-gray-600">Stok Min.</label>
               <input
                 type="number"
@@ -181,7 +181,7 @@ export default function ProductFormModal({
                 min={0}
                 value={form.minStock}
                 onChange={(e) => setForm({ ...form, minStock: Number(e.target.value) })}
-                className="w-full mt-1 border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brand-blue"
+                className="w-full mt-1 border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brand-red"
               />
             </div>
           </div>
@@ -192,14 +192,14 @@ export default function ProductFormModal({
             <button
               type="button"
               onClick={onClose}
-              className="flex-1 border border-gray-300 rounded-lg py-2 text-sm font-medium text-gray-600 hover:bg-gray-50"
+              className="flex-1 rounded-xl border border-gray-200 py-2.5 text-sm font-medium text-gray-600 transition hover:bg-gray-50"
             >
               Batal
             </button>
             <button
               type="submit"
               disabled={saving || uploading}
-              className="flex-1 bg-brand-blue text-white rounded-lg py-2 text-sm font-medium hover:opacity-90 disabled:opacity-60"
+              className="primary-action flex-1 py-2.5 text-sm"
             >
               {saving ? "Menyimpan..." : "Simpan"}
             </button>

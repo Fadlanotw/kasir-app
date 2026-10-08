@@ -3,7 +3,7 @@ import "./globals.css";
 import Providers from "@/components/Providers";
 
 export const metadata: Metadata = {
-  title: "KasirMart - Aplikasi Kasir Minimarket",
+  title: "ArfaMart - Aplikasi Kasir Minimarket",
   description: "Aplikasi kasir minimarket dengan role admin dan kasir (Next.js)",
 };
 

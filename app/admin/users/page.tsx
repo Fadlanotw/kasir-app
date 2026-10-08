@@ -38,20 +38,21 @@ export default function UsersPage() {
   );
 
   return (
-    <div className="space-y-5">
+    <div className="space-y-6">
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
         <div>
-          <h1 className="text-2xl font-bold text-gray-800 flex items-center gap-2">
+          <p className="mb-2 text-xs font-bold uppercase tracking-[0.16em] text-brand-red">Akses toko</p>
+          <h1 className="flex items-center gap-2 text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">
             <UserCog size={22} className="text-brand-red" /> Akun Pengguna
           </h1>
-          <p className="text-gray-500 text-sm">Buat akun kasir baru. Bisa lebih dari satu akun kasir.</p>
+          <p className="mt-1 text-sm text-gray-500">Atur akun admin dan kasir yang dapat mengakses sistem.</p>
         </div>
         <button
           onClick={() => {
             setEditing(null);
             setModalOpen(true);
           }}
-          className="flex items-center gap-2 bg-brand-red text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-brand-redDark"
+          className="primary-action flex items-center gap-2 px-4 py-3 text-sm"
         >
           <Plus size={16} /> Tambah Akun
         </button>
@@ -63,11 +64,11 @@ export default function UsersPage() {
           value={search}
           onChange={(e) => setSearch(e.target.value)}
           placeholder="Cari nama atau username..."
-          className="w-full pl-9 pr-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-brand-blue"
+          className="w-full pl-9 pr-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-brand-red"
         />
       </div>
 
-      <div className="bg-white rounded-xl shadow-sm overflow-hidden">
+      <div className="data-table-shell overflow-x-auto">
         <table className="w-full text-sm">
           <thead className="bg-gray-50 text-gray-500 text-left">
             <tr>
@@ -87,7 +88,7 @@ export default function UsersPage() {
                 <td className="px-4 py-3">
                   <span
                     className={`px-2 py-0.5 rounded-full text-xs font-medium ${
-                      u.role === "ADMIN" ? "bg-brand-blue/10 text-brand-blue" : "bg-green-100 text-green-700"
+                      u.role === "ADMIN" ? "bg-brand-red/10 text-brand-redDark" : "bg-green-100 text-green-700"
                     }`}
                   >
                     {u.role === "ADMIN" ? "Admin" : "Kasir"}

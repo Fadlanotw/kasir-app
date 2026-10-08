@@ -33,7 +33,7 @@ export async function GET(req: NextRequest) {
   return NextResponse.json(transactions);
 }
 
-const ONLINE_TYPES = ["qris", "gopay", "shopeepay", "dana"];
+const ONLINE_TYPES = ["qris", "gopay", "shopeepay", "dana", "bank_transfer", "debit_credit"];
 
 export async function POST(req: NextRequest) {
   const session = await getServerSession(authOptions);
