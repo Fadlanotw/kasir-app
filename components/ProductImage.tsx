@@ -1,7 +1,13 @@
+"use client";
+
+import Image from "next/image";
+import { useEffect, useState } from "react";
+
 type ProductImageProps = {
   name: string;
   imageUrl?: string | null;
   className?: string;
+  sizes?: string;
 };
 
 function getProductPhoto(name: string): string | null {
@@ -20,12 +26,35 @@ function getProductPhoto(name: string): string | null {
   return null;
 }
 
-export default function ProductImage({ name, imageUrl, className = "text-3xl" }: ProductImageProps) {
+export default function ProductImage({
+  name,
+  imageUrl,
+  className = "text-3xl",
+  sizes = "100vw",
+}: ProductImageProps) {
   const photo = imageUrl || getProductPhoto(name);
+  const [failedPhoto, setFailedPhoto] = useState<string | null>(null);
 
-  if (photo) {
-    // eslint-disable-next-line @next/next/no-img-element
-    return <img src={photo} alt={name} className="w-full h-full object-cover" />;
+  useEffect(() => {
+    setFailedPhoto(null);
+  }, [photo]);
+
+  if (photo && photo !== failedPhoto) {
+    const imageSource = photo.startsWith("/products/") ? `${photo}?v=hd` : photo;
+
+    return (
+      <div className="relative h-full w-full">
+        <Image
+          src={imageSource}
+          alt={name}
+          fill
+          sizes={sizes}
+          quality={90}
+          className="object-contain p-1"
+          onError={() => setFailedPhoto(photo)}
+        />
+      </div>
+    );
   }
 
   return (

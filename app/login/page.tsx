@@ -1,9 +1,10 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
-import { ShoppingBasket, Lock, User, ArrowUpRight, ShieldCheck, Sparkles } from "lucide-react";
+import { ShoppingBasket, Lock, User, ArrowUpRight, ShieldCheck } from "lucide-react";
 
 export default function LoginPage() {
   const router = useRouter();
@@ -59,15 +60,109 @@ export default function LoginPage() {
           </div>
 
           <div className="relative z-10 max-w-md">
-            <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.06] px-3 py-1.5 text-xs font-medium text-emerald-100">
-              <Sparkles size={14} /> Kelola toko dengan lebih mudah
-            </div>
             <h2 className="text-5xl font-semibold leading-[1.08] tracking-tight">
               Semua urusan toko, <span className="text-emerald-300">dalam satu tempat.</span>
             </h2>
             <p className="mt-5 max-w-sm text-sm leading-6 text-emerald-100/65">
               Pantau produk, transaksi, dan pelanggan dengan pengalaman kasir yang lebih sederhana.
             </p>
+
+            <div className="mt-10 flex justify-center">
+              <div className="login-3d-scene" aria-hidden="true">
+                <div className="login-3d-orbit login-3d-orbit-one" />
+                <div className="login-3d-orbit login-3d-orbit-two" />
+                <div className="login-3d-grid" />
+                <div className="login-3d-backdrop" />
+
+                <div className="login-3d-card login-3d-panel">
+                  <div className="mb-5 flex items-center justify-between text-[10px] uppercase tracking-[0.2em] text-emerald-100/70">
+                    <span>Dashboard</span>
+                    <span className="rounded-full border border-emerald-200/20 bg-emerald-300/10 px-2 py-1 text-[9px] font-medium text-emerald-200">
+                      Live
+                    </span>
+                  </div>
+                  <div className="mb-3 flex items-end gap-2">
+                    <div className="login-3d-bar" style={{ height: "30%" }} />
+                    <div className="login-3d-bar" style={{ height: "52%" }} />
+                    <div className="login-3d-bar" style={{ height: "68%" }} />
+                    <div className="login-3d-bar" style={{ height: "86%" }} />
+                    <div className="login-3d-bar" style={{ height: "74%" }} />
+                    <div className="login-3d-bar" style={{ height: "96%" }} />
+                  </div>
+                  <div className="mt-5 flex items-center justify-between text-xs text-emerald-50/80">
+                    <span>101 transaksi</span>
+                    <span className="font-semibold text-emerald-300">+34.8%</span>
+                  </div>
+                </div>
+
+                <div className="login-3d-card login-3d-glow-card">
+                  <span className="text-[9px] uppercase tracking-[0.22em] text-emerald-100/65">Profit</span>
+                  <strong className="mt-2 block text-xl font-bold text-white">Rp 18.2K</strong>
+                </div>
+
+                <div className="login-3d-receipt">
+                  <span className="login-3d-receipt-logo">ARFA MART</span>
+                  <span className="login-3d-receipt-line" />
+                  <span className="login-3d-receipt-line login-3d-receipt-line-short" />
+                  <span className="login-3d-receipt-total" />
+                </div>
+
+                <div className="login-3d-counter">
+                  <div className="login-3d-counter-top" />
+                  <div className="login-3d-counter-front" />
+                  <div className="login-3d-counter-side" />
+                </div>
+
+                <div className="login-3d-shopping-bag">
+                  <span className="login-3d-bag-handle" />
+                  <span className="login-3d-bag-logo">ARFA<br />MART</span>
+                </div>
+
+                <div className="login-3d-product-card">
+                  <span className="login-3d-product-badge">PILIHAN TOKO</span>
+                  <div className="login-3d-product-photo">
+                    <Image
+                      src="/products/milk-carton.svg"
+                      alt="Kemasan susu UHT full cream 1 liter"
+                      width={240}
+                      height={300}
+                      priority
+                    />
+                  </div>
+                  <div className="login-3d-product-info">
+                    <strong>Ultra Milk Full Cream</strong>
+                    <span>Susu UHT · 1.000 ml</span>
+                    <div className="login-3d-product-footer">
+                      <span>Produk minimarket</span>
+                      <span className="login-3d-cart-icon"><ShoppingBasket size={13} /></span>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="login-3d-terminal">
+                  <div className="login-3d-terminal-screen">
+                    <span>ARFAMART POS</span>
+                    <strong>Rp 24.800</strong>
+                    <small>TRANSAKSI BERHASIL</small>
+                  </div>
+                  <div className="login-3d-terminal-keypad">
+                    <i /><i /><i />
+                    <i /><i /><i />
+                    <i /><i /><i />
+                  </div>
+                </div>
+
+                <div className="login-3d-chip">
+                  <span className="login-3d-chip-dot" />
+                  <span>POS AKTIF</span>
+                </div>
+
+                <div className="login-3d-stat">
+                  <span className="text-[10px] uppercase tracking-[0.22em] text-emerald-100/70">Sales</span>
+                  <strong className="mt-2 block text-2xl font-bold text-white">Rp 24.8K</strong>
+                </div>
+              </div>
+            </div>
           </div>
 
           <p className="relative z-10 text-xs text-emerald-100/40">ArfaMart · Sistem Kasir Minimarket</p>

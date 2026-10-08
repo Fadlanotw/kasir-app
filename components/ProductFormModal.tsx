@@ -94,7 +94,7 @@ export default function ProductFormModal({
           <div>
             <label className="text-sm text-gray-600">Gambar Produk</label>
             <div className="mt-1 flex items-center gap-3">
-              <div className="flex h-20 w-20 shrink-0 items-center justify-center overflow-hidden rounded-xl border border-dashed border-gray-300 bg-gray-50">
+              <div className="flex h-20 w-20 shrink-0 items-center justify-center overflow-hidden rounded-xl border border-gray-200 bg-white p-1">
                 {form.imageUrl ? (
                   <ProductImage name={form.name || "Gambar produk"} imageUrl={form.imageUrl} />
                 ) : (

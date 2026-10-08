@@ -76,6 +76,461 @@ a {
   .data-table-shell tbody tr {
     @apply transition-colors hover:bg-emerald-50/40;
   }
+
+  .login-3d-scene {
+    @apply relative h-[22rem] w-[22rem] max-w-full;
+    perspective: 1200px;
+    transform-style: preserve-3d;
+  }
+
+  .login-3d-grid {
+    position: absolute;
+    inset: 12% 5% 10% 8%;
+    border-radius: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background-image:
+      linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+    background-size: 22px 22px;
+    mask-image: radial-gradient(circle at 50% 50%, black 54%, transparent 100%);
+    transform: rotateX(72deg) rotateZ(-14deg) translateZ(-10px);
+  }
+
+  .login-3d-backdrop {
+    position: absolute;
+    inset: 14% 10% 8% 12%;
+    border-radius: 2rem;
+    background: radial-gradient(circle at 30% 20%, rgba(52, 211, 153, 0.36), rgba(16, 185, 129, 0.1) 25%, rgba(8, 47, 73, 0.7) 75%);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12), 0 30px 60px rgba(15, 23, 42, 0.35);
+    transform: rotateX(15deg) rotateY(-18deg) translateZ(0);
+  }
+
+  .login-3d-card {
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.08), 0 20px 40px rgba(2, 6, 23, 0.28);
+    backdrop-filter: blur(8px);
+  }
+
+  .login-3d-panel {
+    position: absolute;
+    left: 7%;
+    right: 18%;
+    top: 14%;
+    bottom: 24%;
+    padding: 1.1rem 1.1rem 1rem;
+    border-radius: 1.35rem;
+    background: linear-gradient(135deg, rgba(9, 21, 18, 0.88), rgba(14, 46, 38, 0.74));
+    transform: rotateX(18deg) rotateY(-20deg) translateZ(40px);
+  }
+
+  .login-3d-bar {
+    flex: 1;
+    border-radius: 0.6rem 0.6rem 0 0;
+    background: linear-gradient(180deg, rgba(110, 231, 183, 0.9), rgba(52, 211, 153, 0.4));
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 8px 18px rgba(52, 211, 153, 0.2);
+  }
+
+  .login-3d-orbit {
+    position: absolute;
+    border: 1px solid rgba(167, 243, 208, 0.25);
+    border-radius: 50%;
+    transform: rotateX(72deg) rotateZ(22deg);
+    animation: orbit-3d 9s linear infinite;
+  }
+
+  .login-3d-orbit-one {
+    inset: 12% 18% 14% 10%;
+  }
+
+  .login-3d-orbit-two {
+    inset: 22% 25% 24% 18%;
+    animation-delay: -4.5s;
+  }
+
+  .login-3d-counter {
+    position: absolute;
+    left: 8%;
+    right: 4%;
+    bottom: 11%;
+    height: 4.4rem;
+    transform-style: preserve-3d;
+    transform: rotateX(58deg) rotateZ(-18deg) translateZ(18px);
+  }
+
+  .login-3d-counter-top {
+    position: absolute;
+    inset: 0;
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    border-radius: 1.1rem;
+    background: linear-gradient(135deg, #f0fdf9, #a7f3d0 58%, #6ee7b7);
+    box-shadow: 0 15px 35px rgba(2, 18, 15, 0.3), inset 0 2px 0 rgba(255, 255, 255, 0.8);
+    transform: translateZ(1.2rem);
+  }
+
+  .login-3d-counter-front {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    height: 1.25rem;
+    border-radius: 0 0 0.8rem 0.8rem;
+    background: linear-gradient(90deg, #0f766e, #115e59 65%, #134e4a);
+    transform: rotateX(-90deg) translateZ(1.2rem);
+    transform-origin: top;
+  }
+
+  .login-3d-counter-side {
+    position: absolute;
+    top: 0;
+    right: -1.2rem;
+    width: 1.25rem;
+    height: 100%;
+    border-radius: 0 0.8rem 0.8rem 0;
+    background: linear-gradient(180deg, #0f766e, #064e3b);
+    transform: rotateY(90deg) translateZ(0.6rem);
+  }
+
+  .login-3d-shopping-bag {
+    position: absolute;
+    left: 18%;
+    bottom: 27%;
+    width: 4.25rem;
+    height: 5rem;
+    border-radius: 0.45rem 0.45rem 0.8rem 0.8rem;
+    background: linear-gradient(105deg, #fb7185 0%, #e11d48 58%, #9f1239 100%);
+    box-shadow: 0 18px 28px rgba(2, 6, 23, 0.32), inset 5px 0 8px rgba(255,255,255,0.16);
+    transform: rotateX(8deg) rotateY(20deg) rotateZ(-8deg) translateZ(48px);
+    animation: float-3d-soft 6s ease-in-out infinite;
+  }
+
+  .login-3d-bag-handle {
+    position: absolute;
+    left: 24%;
+    top: -1.4rem;
+    width: 52%;
+    height: 1.8rem;
+    border: 0.35rem solid #fda4af;
+    border-bottom: 0;
+    border-radius: 1rem 1rem 0 0;
+  }
+
+  .login-3d-bag-logo {
+    position: absolute;
+    inset: 36% 0 auto;
+    color: #fff1f2;
+    font-size: 0.54rem;
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: 0.14em;
+    text-align: center;
+    text-shadow: 0 1px 4px rgba(76, 5, 25, 0.45);
+  }
+
+  .login-3d-product-card {
+    position: absolute;
+    z-index: 12;
+    top: 22%;
+    right: 1%;
+    width: 9.5rem;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 1rem;
+    background: #fff;
+    box-shadow: 0 22px 38px rgba(2, 6, 23, 0.38), 0 0 0 1px rgba(15, 23, 42, 0.08);
+    transform: rotateX(10deg) rotateY(-20deg) translateZ(88px);
+    animation: float-3d-soft 6s ease-in-out infinite;
+  }
+
+  .login-3d-product-badge {
+    position: absolute;
+    z-index: 1;
+    top: 0.5rem;
+    left: 0;
+    padding: 0.3rem 0.45rem;
+    border-radius: 0 0.35rem 0.35rem 0;
+    background: linear-gradient(135deg, #fb5b35, #ee3425);
+    color: white;
+    font-size: 0.43rem;
+    font-weight: 800;
+    letter-spacing: 0.07em;
+    box-shadow: 0 3px 8px rgba(190, 24, 24, 0.25);
+  }
+
+  .login-3d-product-photo {
+    display: flex;
+    height: 8.4rem;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background:
+      radial-gradient(ellipse at 50% 58%, rgba(14, 165, 233, 0.12), transparent 60%),
+      linear-gradient(145deg, #fff, #f1f5f9);
+  }
+
+  .login-3d-product-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 0.35rem 1.1rem 0;
+    filter: drop-shadow(0 8px 7px rgba(15, 23, 42, 0.18));
+  }
+
+  .login-3d-product-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.22rem;
+    padding: 0.55rem 0.6rem 0.6rem;
+    color: #1e293b;
+  }
+
+  .login-3d-product-info > strong {
+    overflow: hidden;
+    font-size: 0.59rem;
+    font-weight: 750;
+    line-height: 1.3;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .login-3d-product-info > span {
+    color: #64748b;
+    font-size: 0.46rem;
+  }
+
+  .login-3d-product-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 0.2rem;
+    padding-top: 0.4rem;
+    border-top: 1px solid #f1f5f9;
+    color: #ea580c;
+    font-size: 0.43rem;
+    font-weight: 700;
+  }
+
+  .login-3d-cart-icon {
+    display: flex;
+    width: 1.35rem;
+    height: 1.35rem;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.45rem;
+    background: #fff1ed;
+    color: #ea4e2a;
+  }
+
+  .login-3d-terminal {
+    position: absolute;
+    right: 17%;
+    bottom: 19%;
+    width: 6.6rem;
+    height: 7.5rem;
+    padding: 0.45rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 1rem;
+    background: linear-gradient(145deg, #475569, #1e293b 58%, #0f172a);
+    box-shadow: 0 24px 38px rgba(2, 6, 23, 0.45), inset 2px 2px 4px rgba(255,255,255,0.2), inset -3px -3px 8px rgba(2,6,23,0.55);
+    transform: rotateX(12deg) rotateY(-22deg) translateZ(105px);
+    animation: float-3d 5.5s ease-in-out infinite;
+  }
+
+  .login-3d-terminal-screen {
+    display: flex;
+    height: 42%;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0.42rem;
+    border: 1px solid rgba(110, 231, 183, 0.24);
+    border-radius: 0.5rem;
+    background: linear-gradient(145deg, #052e2b, #064e3b);
+    color: #a7f3d0;
+    box-shadow: inset 0 0 12px rgba(52, 211, 153, 0.12);
+  }
+
+  .login-3d-terminal-screen span {
+    font-size: 0.35rem;
+    letter-spacing: 0.12em;
+  }
+
+  .login-3d-terminal-screen strong {
+    color: #ecfdf5;
+    font-size: 0.66rem;
+    letter-spacing: -0.02em;
+  }
+
+  .login-3d-terminal-screen small {
+    font-size: 0.3rem;
+    letter-spacing: 0.08em;
+  }
+
+  .login-3d-terminal-keypad {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.27rem;
+    padding: 0.48rem 0.52rem 0;
+  }
+
+  .login-3d-terminal-keypad i {
+    height: 0.38rem;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 0.15rem;
+    background: linear-gradient(145deg, #94a3b8, #475569);
+    box-shadow: 0 1px 2px rgba(2, 6, 23, 0.5);
+  }
+
+  .login-3d-terminal-keypad i:nth-child(3n) {
+    background: linear-gradient(145deg, #34d399, #047857);
+  }
+
+  .login-3d-receipt {
+    position: absolute;
+    left: 5%;
+    bottom: 30%;
+    display: flex;
+    width: 2.65rem;
+    height: 5.6rem;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.38rem;
+    padding: 0.55rem 0.35rem;
+    background: linear-gradient(90deg, #e2e8f0, #fff 22%, #f8fafc 85%, #cbd5e1);
+    color: #334155;
+    box-shadow: 0 15px 22px rgba(2, 6, 23, 0.3);
+    clip-path: polygon(0 0, 100% 0, 100% 96%, 88% 100%, 75% 96%, 62% 100%, 50% 96%, 38% 100%, 25% 96%, 12% 100%, 0 96%);
+    transform: rotateX(8deg) rotateY(18deg) rotateZ(-10deg) translateZ(72px);
+    animation: receipt-wave 4s ease-in-out infinite;
+  }
+
+  .login-3d-receipt-logo {
+    font-size: 0.31rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    white-space: nowrap;
+  }
+
+  .login-3d-receipt-line {
+    width: 100%;
+    height: 1px;
+    background: repeating-linear-gradient(90deg, #94a3b8 0 5px, transparent 5px 7px);
+  }
+
+  .login-3d-receipt-line-short {
+    width: 70%;
+    align-self: flex-start;
+  }
+
+  .login-3d-receipt-total {
+    width: 80%;
+    height: 0.45rem;
+    margin-top: auto;
+    border-top: 1px solid #64748b;
+    border-bottom: 2px solid #334155;
+  }
+
+  .login-3d-glow-card {
+    position: absolute;
+    left: 17%;
+    top: 18%;
+    padding: 0.75rem 0.9rem 0.8rem;
+    border-radius: 1rem;
+    background: rgba(13, 30, 33, 0.45);
+    transform: rotateX(14deg) rotateY(14deg) translateZ(90px);
+    animation: float-3d-soft 6s ease-in-out infinite;
+  }
+
+  .login-3d-chip {
+    position: absolute;
+    left: 8%;
+    top: 8%;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid rgba(167, 243, 208, 0.2);
+    border-radius: 999px;
+    background: rgba(13, 30, 33, 0.5);
+    color: rgba(240, 253, 250, 0.85);
+    box-shadow: 0 12px 26px rgba(2, 6, 23, 0.22);
+    transform: rotateX(18deg) rotateY(-20deg) translateZ(80px);
+  }
+
+  .login-3d-chip-dot {
+    display: block;
+    width: 0.55rem;
+    height: 0.55rem;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #6ee7b7, #34d399);
+    box-shadow: 0 0 10px rgba(52, 211, 153, 0.8);
+  }
+
+  .login-3d-stat {
+    position: absolute;
+    right: 9%;
+    top: 11%;
+    padding: 0.8rem 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 1rem;
+    background: rgba(13, 30, 33, 0.5);
+    box-shadow: 0 18px 32px rgba(2, 6, 23, 0.22);
+    backdrop-filter: blur(8px);
+    transform: rotateX(16deg) rotateY(-18deg) translateZ(90px);
+  }
+}
+
+@keyframes float-3d {
+  0%,
+  100% {
+    transform: rotateX(12deg) rotateY(-28deg) translateY(0) translateZ(110px);
+  }
+  50% {
+    transform: rotateX(18deg) rotateY(-22deg) translateY(-10px) translateZ(120px);
+  }
+}
+
+@keyframes float-3d-soft {
+  0%,
+  100% {
+    transform: rotateX(14deg) rotateY(14deg) translateY(0) translateZ(90px);
+  }
+  50% {
+    transform: rotateX(18deg) rotateY(18deg) translateY(-8px) translateZ(100px);
+  }
+}
+
+@keyframes orbit-3d {
+  0% {
+    transform: rotateX(72deg) rotateY(0deg) rotateZ(22deg) scale(0.96);
+    opacity: 0.32;
+  }
+  50% {
+    transform: rotateX(72deg) rotateY(180deg) rotateZ(22deg) scale(1);
+    opacity: 0.75;
+  }
+  100% {
+    transform: rotateX(72deg) rotateY(360deg) rotateZ(22deg) scale(0.96);
+    opacity: 0.32;
+  }
+}
+
+@keyframes receipt-wave {
+  0%,
+  100% {
+    transform: rotateX(8deg) rotateY(18deg) rotateZ(-10deg) translateZ(72px) translateY(0);
+  }
+  50% {
+    transform: rotateX(12deg) rotateY(12deg) rotateZ(-6deg) translateZ(78px) translateY(-5px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .login-3d-scene *,
+  .login-3d-scene *::before,
+  .login-3d-scene *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+  }
 }
 
 @media (max-width: 639px) {

@@ -312,8 +312,12 @@ export default function KasirPage() {
               disabled={p.stock < 1}
               className="surface-card group p-3 text-left transition duration-200 hover:-translate-y-1 hover:shadow-lg disabled:cursor-not-allowed disabled:opacity-40"
             >
-              <div className="mb-3 flex h-24 items-center justify-center overflow-hidden rounded-xl bg-emerald-50 transition group-hover:bg-emerald-100/70 sm:h-28">
-                <ProductImage name={p.name} imageUrl={p.imageUrl} />
+              <div className="relative mb-3 aspect-square w-full overflow-hidden rounded-xl border border-gray-100 bg-gradient-to-br from-white to-gray-50 p-1 transition duration-200 group-hover:border-emerald-200">
+                <ProductImage
+                  name={p.name}
+                  imageUrl={p.imageUrl}
+                  sizes="(max-width: 640px) 45vw, (max-width: 1280px) 20vw, 16vw"
+                />
               </div>
               <p className="line-clamp-2 min-h-10 text-sm font-semibold leading-5 text-gray-800">{p.name}</p>
               <p className="mt-1 text-[11px] font-medium uppercase tracking-wide text-gray-400">{p.category?.name ?? "-"}</p>
@@ -392,8 +396,8 @@ export default function KasirPage() {
           )}
           {cart.map((item) => (
             <div key={item.product.id} className="flex items-center gap-2">
-              <div className="w-10 h-10 rounded-md bg-gray-50 flex items-center justify-center overflow-hidden shrink-0">
-                <ProductImage name={item.product.name} imageUrl={item.product.imageUrl} className="text-xl" />
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center overflow-hidden rounded-md border border-gray-100 bg-white">
+                <ProductImage name={item.product.name} imageUrl={item.product.imageUrl} className="text-xl" sizes="40px" />
               </div>
               <div className="flex-1 min-w-0">
                 <p className="text-sm font-medium text-gray-800 truncate">{item.product.name}</p>

@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="300" viewBox="0 0 240 300" fill="none">
+  <defs>
+    <linearGradient id="front" x1="58" y1="76" x2="176" y2="270" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#38BDF8"/>
+      <stop offset=".52" stop-color="#0284C7"/>
+      <stop offset="1" stop-color="#075985"/>
+    </linearGradient>
+    <linearGradient id="side" x1="174" y1="88" x2="210" y2="262" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0369A1"/>
+      <stop offset="1" stop-color="#0C4A6E"/>
+    </linearGradient>
+    <linearGradient id="top" x1="70" y1="54" x2="182" y2="90" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#E0F2FE"/>
+      <stop offset="1" stop-color="#7DD3FC"/>
+    </linearGradient>
+    <linearGradient id="cap" x1="145" y1="26" x2="176" y2="59" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#2563EB"/>
+      <stop offset="1" stop-color="#1E40AF"/>
+    </linearGradient>
+    <linearGradient id="milk" x1="92" y1="152" x2="150" y2="214" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFF"/>
+      <stop offset="1" stop-color="#BAE6FD"/>
+    </linearGradient>
+    <filter id="shadow" x="22" y="14" width="208" height="278" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
+      <feGaussianBlur stdDeviation="9"/>
+    </filter>
+  </defs>
+  <ellipse cx="129" cy="270" rx="72" ry="15" fill="#0F172A" fill-opacity=".18" filter="url(#shadow)"/>
+  <path d="M62 77 91 48h81l26 28v178c0 8-6 14-14 14H76c-8 0-14-6-14-14V77Z" fill="url(#front)" stroke="#075985" stroke-width="2"/>
+  <path d="m172 48 26 28v178c0 8-6 14-14 14h-12V48Z" fill="url(#side)"/>
+  <path d="m62 77 29-29h81l-17 34H62V77Z" fill="url(#top)" stroke="#7DD3FC" stroke-width="2"/>
+  <path d="m155 82 17-34 26 28-20 35-23-29Z" fill="#38BDF8" stroke="#7DD3FC" stroke-width="2"/>
+  <path d="M141 29c0-5 4-9 9-9h22c5 0 9 4 9 9v28h-40V29Z" fill="url(#cap)" stroke="#1E40AF" stroke-width="2"/>
+  <path d="M145 30h32M145 37h32M145 44h32" stroke="#93C5FD" stroke-opacity=".72" stroke-width="2"/>
+  <path d="M80 100c22-17 57-17 78 0v14c-21-17-56-17-78 0v-14Z" fill="#F0F9FF" fill-opacity=".95"/>
+  <text x="119" y="133" fill="#F0F9FF" font-family="Arial,sans-serif" font-size="11" font-weight="700" letter-spacing="3" text-anchor="middle">SUSU UHT</text>
+  <text x="119" y="159" fill="#FFF" font-family="Arial,sans-serif" font-size="20" font-weight="800" letter-spacing="-.7" text-anchor="middle">FULL</text>
+  <text x="119" y="181" fill="#FFF" font-family="Arial,sans-serif" font-size="20" font-weight="800" letter-spacing="-.7" text-anchor="middle">CREAM</text>
+  <path d="M90 199c7-9 14-9 21 0s14 9 21 0 14-9 21 0" stroke="url(#milk)" stroke-linecap="round" stroke-width="7"/>
+  <path d="M95 222h49" stroke="#E0F2FE" stroke-opacity=".72" stroke-linecap="round" stroke-width="2"/>
+  <text x="119" y="242" fill="#E0F2FE" font-family="Arial,sans-serif" font-size="12" font-weight="700" letter-spacing="2" text-anchor="middle">1 LITER</text>
+  <path d="M77 252h80" stroke="#BAE6FD" stroke-opacity=".42" stroke-width="1"/>
+  <path d="M73 87v155" stroke="#BAE6FD" stroke-opacity=".26" stroke-width="2"/>
+</svg>

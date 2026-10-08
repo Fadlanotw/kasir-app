@@ -2,6 +2,9 @@ Product photos
 
 Package photos are from Open Food Facts. The product photos are shared under
 the Creative Commons Attribution-ShareAlike license. Source product pages:
+The files below use the full-resolution front photos available from each
+product page (rather than the 400px preview). Tea and rice use 1200px
+Unsplash source images.
 - AQUA (8886008101091): https://world.openfoodfacts.org/product/8886008101091
 - Kapal Api Special Mix (8991002135376): https://world.openfoodfacts.org/product/8991002135376
 - Chitato (0089686734058): https://world.openfoodfacts.org/product/0089686734058
@@ -11,5 +14,21 @@ the Creative Commons Attribution-ShareAlike license. Source product pages:
 - Gula Kristal Putih (8997207580027): https://world.openfoodfacts.org/product/8997207580027
 
 Tea and rice photos are from Unsplash:
-- Tea: https://images.unsplash.com/photo-1559056199-641a0ac8b55e
+- Tea: https://images.unsplash.com/photo-1571934811356-5cc061b6821f
 - Rice: https://images.unsplash.com/photo-1586201375761-83865001e31c
+
+Additional product package photos are from Open Food Facts and are shared
+under the Creative Commons Attribution-ShareAlike license:
+- Ultra Milk Full Cream (8998009010613): https://world.openfoodfacts.org/product/8998009010613
+- Beng-Beng Extra Chocolate & Caramel (8996001354124): https://world.openfoodfacts.org/product/8996001354124
+- Nabati Richeese Wafer (8993175537285): https://world.openfoodfacts.org/product/8993175537285
+- Chocolatos Cheese Flavor (8992775001608): https://world.openfoodfacts.org/product/8992775001608
+- Biskitop Vegetable and Cheese Stick (8993083932141): https://world.openfoodfacts.org/product/8993083932141
+- Nabati Richoco Wafer (8993175535885): https://world.openfoodfacts.org/product/8993175535885
+- Nextar Brownies Choco Delight (8993175540797): https://world.openfoodfacts.org/product/8993175540797
+- Roma Sandwich Chocolate Bon Bon (8996001305041): https://world.openfoodfacts.org/product/8996001305041
+- Superco (8888166603431): https://world.openfoodfacts.org/product/8888166603431
+- Nissin Crispy Crackers (8888166336568): https://world.openfoodfacts.org/product/8888166336568
+- Roma Sari Gandum Sandwich (8996001304990): https://world.openfoodfacts.org/product/8996001304990
+- Nextar Nastar Strawberry (8993175548335): https://world.openfoodfacts.org/product/8993175548335
+- Khong Guan Assorted Biscuits (8888166603554): https://world.openfoodfacts.org/product/8888166603554

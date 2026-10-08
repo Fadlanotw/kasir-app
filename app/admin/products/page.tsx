@@ -114,7 +114,7 @@ export default function ProductsPage() {
             {filtered.map((p) => (
               <tr key={p.id} className="hover:bg-gray-50">
                 <td className="px-4 py-3">
-                  <div className="w-12 h-12 rounded-lg bg-gray-100 overflow-hidden flex items-center justify-center">
+                  <div className="flex h-12 w-12 items-center justify-center overflow-hidden rounded-lg border border-gray-100 bg-white">
                     <ProductImage name={p.name} imageUrl={p.imageUrl} className="text-xl" />
                   </div>
                 </td>
